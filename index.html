@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>College Fest 2025 — SR University</title>
+  <meta name="description" content="SR University College Fest — music, tech, sports & culture. Register now!" />
+
+  <!-- Simple, self-contained styles -->
+  <style>
+    :root{
+      --bg-1: #6d28d9; /* purple */
+      --bg-2: #ec4899; /* pink */
+      --card: #ffffff;
+      --muted: #6b7280;
+      --glass: rgba(255,255,255,0.08);
+      --radius: 14px;
+      --max: 1100px;
+      --accent: #7c3aed;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(135deg,var(--bg-1),var(--bg-2));
+      color:#111827;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding-bottom:48px;
+    }
+    .container{max-width:var(--max);margin:0 auto;padding:18px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;color:white}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:52px;height:52px;border-radius:12px;
+      background:linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.06));
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:rgba(255,255,255,0.95);text-decoration:none;font-weight:600}
+    .hamburger{display:none;background:transparent;border:0;color:white;font-size:22px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;min-height:60vh;padding:28px 0;color:white}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border-radius:var(--radius);padding:26px;backdrop-filter: blur(6px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+    .hero h1{margin:0;font-size:clamp(28px,6vw,44px);line-height:1.05}
+    .hero p.lead{margin:8px 0 18px;color: #f3e8ff; font-weight:600}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:999px;font-weight:600}
+
+    /* Layout sections */
+    section{margin-top:34px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(2,6,23,0.08)}
+    h2{margin:0 0 12px;font-size:20px;color:#0f172a}
+
+    /* Events grid */
+    .grid{display:grid;gap:14px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .event{
+      padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfbff);
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .event h3{margin:0}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Schedule accordion */
+    .accordion-item{border-radius:10px;border:1px solid rgba(15,23,42,0.06);overflow:hidden}
+    .acc-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;cursor:pointer}
+    .acc-body{padding:12px 16px;border-top:1px solid rgba(15,23,42,0.04);display:none}
+
+    /* Team */
+    .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .person{display:flex;gap:12px;align-items:center}
+    .avatar{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,#f3f4f6,#e9e7ff);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    /* Footer */
+    footer{margin-top:30px;color:white;text-align:center}
+
+    /* Form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea,button{
+      font:inherit;padding:10px;border-radius:8px;border:1px solid rgba(11,14,18,0.06)
+    }
+    button{
+      background:var(--accent);color:white;border:0;padding:12px 14px;font-weight:700;cursor:pointer;border-radius:10px
+    }
+
+    /* Responsive */
+    @media (min-width:900px){
+      .hero{grid-template-columns:1fr 420px}
+      nav{gap:20px}
+    }
+    @media (max-width:900px){
+      .grid.cols-3{grid-template-columns:repeat(2,1fr)}
+      .team-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      header{padding:10px 0}
+      nav{display:none}
+      .hamburger{display:block}
+      .hero{padding:18px 0}
+      .grid.cols-3, .grid.cols-2{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo">SR</div>
+        <div style="color:white">
+          <div style="font-weight:800">SRU Fest 2025</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.85)">Ignite the Spark of Talent</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#events">Events</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+        <a href="#register" style="background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:10px;">Register</a>
+      </nav>
+
+      <button class="hamburger" aria-label="open menu" onclick="toggleMenu()">☰</button>
+    </header>
+
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobileMenu" style="display:none;background:rgba(255,255,255,0.04);padding:12px;border-radius:10px;margin-bottom:12px;color:white">
+      <a href="#events" style="display:block;padding:8px 0;color:white">Events</a>
+      <a href="#schedule" style="display:block;padding:8px 0;color:white">Schedule</a>
+      <a href="#team" style="display:block;padding:8px 0;color:white">Team</a>
+      <a href="#contact" style="display:block;padding:8px 0;color:white">Contact</a>
+      <a href="#register" style="display:block;padding:8px 0;color:white">Register</a>
+    </div>
+
+    <!-- Hero -->
+    <main class="hero">
+      <div class="hero-card">
+        <h1>SR University College Fest 2025 🎉</h1>
+        <p class="lead">March 10–12, 2025 • SR University Campus, Warangal</p>
+
+        <div class="badges">
+          <div class="badge">Cultural Nights</div>
+          <div class="badge">Hackathon</div>
+          <div class="badge">Sports Arena</div>
+          <div class="badge">Food & Fun</div>
+        </div>
+
+        <p style="margin-top:18px;color:#efe6ff">
+          Join students from across the region for three days of competitions, performances and workshops.
+          We welcome performers, tech enthusiasts, athletes and volunteers!
+        </p>
+
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <a href="#register" style="background:#fff;padding:10px 14px;border-radius:12px;font-weight:800;color:var(--bg-1);text-decoration:none">Register Now</a>
+          <a href="#events" style="color:white;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.06);text-decoration:none">See Events</a>
+        </div>
+      </div>
+
+      <!-- Quick details -->
+      <aside>
+        <div class="card" style="color:#0f172a">
+          <h3 style="margin-top:0">Quick Info</h3>
+          <p class="muted" style="margin:6px 0"><strong>Date:</strong> March 10–12, 2025</p>
+          <p class="muted" style="margin:6px 0"><strong>Venue:</strong> SR University, Main Grounds</p>
+          <p class="muted" style="margin:6px 0"><strong>Contact:</strong> +91 98765 43210</p>
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(15,23,42,0.06)">
+          <p style="margin:6px 0">Volunteers: <strong>Apply on-site</strong></p>
+          <p style="margin:0">Follow us: <a href="#" style="text-decoration:none;color:var(--accent)">Instagram</a> • <a href="#" style="text-decoration:none;color:var(--accent)">Facebook</a></p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Events -->
+    <section id="events">
+      <div class="card">
+        <h2>Fest Highlights</h2>
+        <div class="grid cols-3" style="margin-top:12px">
+          <div class="event">
+            <h3>Cultural Night</h3>
+            <div class="muted">Dance, music, drama — open auditions on Day 1</div>
+            <div style="margin-top:auto"><strong>Prize:</strong> ₹15,000</div>
+          </div>
+
+          <div class="event">
+            <h3>Hackathon</h3>
+            <div class="muted">24-hour team hackathon • Themes released Day 1</div>
+            <div style="margin-top:auto"><strong>Prize:</strong> ₹30,000</div>
+          </div>
+
+          <div class="event">
+            <h3>Sports Arena</h3>
+            <div class="muted">Football, Basketball, Badminton & Track events</div>
+            <div style="margin-top:auto"><strong>Team Registration</strong> opens Feb 25</div>
+          </div>
+
+          <div class="event">
+            <h3>Workshops</h3>
+            <div class="muted">AI, Robotics, Stage Management — limited seats</div>
+            <div style="margin-top:auto"><strong>Fee:</strong> ₹200 per workshop</div>
+          </div>
+
+          <div class="event">
+            <h3>Art & Photography</h3>
+            <div class="muted">Insta-worthy competitions & exhibitions</div>
+            <div style="margin-top:auto"><strong>Submit by:</strong> March 5</div>
+          </div>
+
+          <div class="event">
+            <h3>Food Fest</h3>
+            <div class="muted">Street food stalls & stalls from local vendors</div>
+            <div style="margin-top:auto"><strong>Open:</strong> All days</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section id="schedule">
+      <div class="card">
+        <h2>Schedule — Day wise</h2>
+
+        <div style="margin-top:12px" class="accordion">
+          <div class="accordion-item">
+            <div class="acc-head" onclick="toggleAccordion(this)">
+              <div><strong>Day 1 — March 10</strong><div class="muted" style="font-size:13px">Inauguration, auditions, workshops</div></div>
+              <div>▼</div>
+            </div>
+            <div class="acc-body">
+              <ul style="margin:0;padding-left:18px">
+                <li>10:00 AM — Inauguration & Keynote</li>
+                <li>12:30 PM — Tech Workshops (AI basics)</li>
+                <li>03:00 PM — Cultural auditions</li>
+                <li>07:00 PM — Cultural Night 1 (performances)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item" style="margin-top:8px">
+            <div class="acc-head" onclick="toggleAccordion(this)">
+              <div><strong>Day 2 — March 11</strong><div class="muted" style="font-size:13px">Hackathon, sports prelims</div></div>
+              <div>▼</div>
+            </div>
+            <div class="acc-body">
+              <ul style="margin:0;padding-left:18px">
+                <li>09:00 AM — Hackathon starts</li>
+                <li>11:00 AM — Sports prelims</li>
+                <li>05:00 PM — Panel: Careers in Tech</li>
+                <li>08:00 PM — Cultural Night 2</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-item" style="margin-top:8px">
+            <div class="acc-head" onclick="toggleAccordion(this)">
+              <div><strong>Day 3 — March 12</strong><div class="muted" style="font-size:13px">Finals, awards & closing</div></div>
+              <div>▼</div>
+            </div>
+            <div class="acc-body">
+              <ul style="margin:0;padding-left:18px">
+                <li>10:00 AM — Hackathon presentations</li>
+                <li>02:00 PM — Sports finals</li>
+                <li>05:00 PM — Awards ceremony</li>
+                <li>07:00 PM — Closing concert</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team">
+      <div class="card">
+        <h2>Organizing Team</h2>
+        <div class="team-grid" style="margin-top:12px">
+          <div class="person">
+            <div class="avatar">AK</div>
+            <div>
+              <div style="font-weight:700">Aarav Kumar</div>
+              <div class="muted">Fest Coordinator</div>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="avatar">MG</div>
+            <div>
+              <div style="font-weight:700">Megha Sharma</div>
+              <div class="muted">Event Manager</div>
+            </div>
+          </div>
+
+          <div class="person">
+            <div class="avatar">RD</div>
+            <div>
+              <div style="font-weight:700">Rohan Das</div>
+              <div class="muted">PR & Media</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact + Register -->
+    <section id="contact">
+      <div style="display:grid;grid-template-columns:1fr;gap:14px;margin-top:12px">
+        <div class="card">
+          <h2>Contact & Venue</h2>
+          <p class="muted" style="margin-top:6px">
+            SR University, Main Grounds, Warangal<br>
+            For inquiries: <strong>+91 98765 43210</strong> • Email: <strong>sru.fest2025@gmail.com</strong>
+          </p>
+
+          <div style="margin-top:12px">
+            <iframe title="map"
+              src="https://www.google.com/maps?q=warangal&output=embed"
+              style="width:100%;height:200px;border:0;border-radius:10px;" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="card" id="register">
+          <h2>Register</h2>
+          <p class="muted">Fill this quick form to register for the fest (client-side demo).</p>
+
+          <form id="regForm" onsubmit="handleRegister(event)">
+            <input type="text" id="name" placeholder="Full name" required />
+            <input type="email" id="email" placeholder="Email address" required />
+            <input type="text" id="phone" placeholder="Phone (optional)" />
+            <select id="category" required>
+              <option value="">Register as...</option>
+              <option>Participant - Cultural</option>
+              <option>Participant - Tech</option>
+              <option>Participant - Sports</option>
+              <option>Volunteer</option>
+              <option>Guest</option>
+            </select>
+            <textarea id="notes" placeholder="Any notes (team name, preferences)"></textarea>
+
+            <button type="submit">Submit Registration</button>
+            <div id="formMsg" style="margin-top:10px;color:green;display:none">Thanks! Registration received (demo).</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="margin-top:22px">
+      <div style="opacity:0.95">© SR University Fest 2025 — Built with ❤</div>
+    </footer>
+
+  </div> <!-- /.container -->
+
+  <!-- Minimal JS for interactivity -->
+  <script>
+    // Mobile menu toggle
+    function toggleMenu(){
+      const el = document.getElementById('mobileMenu');
+      el.style.display = (el.style.display === 'none' || el.style.display === '') ? 'block' : 'none';
+    }
+
+    // Accordion toggle
+    function toggleAccordion(head){
+      const body = head.nextElementSibling;
+      const open = body.style.display === 'block';
+      // close all siblings
+      document.querySelectorAll('.acc-body').forEach(b => b.style.display = 'none');
+      if(!open) body.style.display = 'block';
+    }
+
+    // Simple registration handler (client-side demo)
+    function handleRegister(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const category = document.getElementById('category').value;
+      if(!name || !email || !category){ alert('Please fill required fields'); return; }
+
+      // In a real site, send fetch() to backend here.
+      document.getElementById('formMsg').style.display = 'block';
+      setTimeout(()=> {
+        document.getElementById('formMsg').innerText = 'Registration saved locally (demo). We will contact you soon.';
+      }, 500);
+
+      // Reset (optional)
+      document.getElementById('regForm').reset();
+    }
+
+    // Close mobile menu on link click (nice UX)
+    document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => {
+      document.getElementById('mobileMenu').style.display = 'none';
+    }));
+
+    // Make first accordion open initially
+    document.addEventListener('DOMContentLoaded', ()=> {
+      const first = document.querySelector('.acc-body');
+      if(first) first.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
